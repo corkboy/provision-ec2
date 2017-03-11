@@ -1,0 +1,16 @@
+---
+
+- hosts: local-machine
+  connection: local
+  tasks:
+    - name: Create the EC2 instance 
+      ec2:
+       state: present
+       assign_public_ip: false
+       count: 1
+       group_id: sg-04432861
+       image: ami-37501207
+       instance_type: t1.micro
+       key_name: RayH-Linux-Drupal
+       region: us-west-2
+       wait: true

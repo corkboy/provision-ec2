@@ -1,0 +1,6 @@
+---
+- name: Provision an EC2 instance
+  hosts: local-machine
+  connection: local
+  roles:
+    - ec2
